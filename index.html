@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reinos Africanos (Séculos XIII–XV)</title>
+<title>Reinos Africanos – Séculos XIII–XV</title>
 
 <style>
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #0b1d26, #000);
-  color: #ffffff;
+  background: linear-gradient(180deg, #07161d, #000);
+  color: #fff;
 }
 
 .slide {
@@ -33,19 +33,20 @@ p, li {
 }
 
 ul {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .illustration {
+  max-width: 340px;
   margin: 30px auto;
-  max-width: 320px;
+  display: block;
 }
 
 .footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.8);
   color: #d4af37;
   text-align: center;
   padding: 8px;
@@ -77,71 +78,80 @@ button {
   <button onclick="nextSlide()">▶</button>
 </div>
 
-<!-- SLIDE 1 -->
+<!-- SLIDE 1 – INTRODUÇÃO -->
 <section class="slide active">
   <h1>Reinos Africanos<br>(Séculos XIII–XV)</h1>
   <p>
-    A África medieval foi marcada por reinos organizados, comércio intenso
-    e produção de conhecimento.
+    A África medieval foi marcada por reinos organizados,
+    comércio intenso e produção de conhecimento.
   </p>
 
-  <!-- MAPA DA ÁFRICA (SVG) -->
-  <svg class="illustration" viewBox="0 0 200 200">
-    <path d="M100 10 C150 20 180 70 160 120 C140 170 100 190 80 170 C40 150 20 100 40 60 C60 30 80 20 100 10Z"
-          fill="#d4af37"/>
-    <text x="65" y="105" fill="#000" font-size="12">ÁFRICA</text>
+  <!-- MAPA DA ÁFRICA COM SAHEL -->
+  <svg class="illustration" viewBox="0 0 300 300">
+    <path d="M150 20
+             C210 40 260 120 230 200
+             C200 260 120 280 90 240
+             C40 200 30 120 70 70
+             C100 30 120 25 150 20Z"
+          fill="#cfae3b"/>
+    <rect x="90" y="90" width="120" height="30" fill="#2ec4b6"/>
+    <text x="95" y="110" font-size="12" fill="#000">Região do Sahel</text>
   </svg>
 </section>
 
-<!-- SLIDE 2 – SAHEL -->
+<!-- SLIDE 2 – SAHEL / MANSA MUSA -->
 <section class="slide">
-  <h2>O Sahel: Ouro e Saber</h2>
+  <h2>O Sahel: Ouro e Poder</h2>
   <ul>
-    <li><b>Gana</b>: Ouro e rotas comerciais</li>
-    <li><b>Mali</b>: Império de Mansa Musa</li>
-    <li><b>Songhai</b>: Timbuktu e educação</li>
+    <li><b>Gana</b>: controle do ouro</li>
+    <li><b>Mali</b>: Mansa Musa</li>
+    <li><b>Songhai</b>: educação e comércio</li>
   </ul>
 
-  <!-- REI -->
-  <svg class="illustration" viewBox="0 0 200 200">
-    <circle cx="100" cy="70" r="30" fill="#d4af37"/>
-    <rect x="70" y="100" width="60" height="70" fill="#2ec4b6"/>
-    <rect x="60" y="50" width="80" height="20" fill="#b08d2f"/>
-    <text x="55" y="190" fill="#d4af37" font-size="12">Mansa Musa</text>
+  <!-- MANSA MUSA -->
+  <svg class="illustration" viewBox="0 0 300 300">
+    <circle cx="150" cy="80" r="35" fill="#5a3e2b"/>
+    <rect x="110" y="120" width="80" height="100" fill="#2ec4b6"/>
+    <polygon points="115,60 185,60 170,40 130,40" fill="#d4af37"/>
+    <circle cx="150" cy="180" r="18" fill="#d4af37"/>
+    <text x="95" y="250" fill="#d4af37" font-size="14">Mansa Musa (Império do Mali)</text>
   </svg>
 
-  <p>💡 Mansa Musa é considerado o homem mais rico da história.</p>
+  <p>💡 Considerado o homem mais rico da história.</p>
 </section>
 
-<!-- SLIDE 3 – SONGHAI -->
+<!-- SLIDE 3 – TIMBUKTU -->
 <section class="slide">
-  <h2>Império Songhai</h2>
+  <h2>Songhai e Timbuktu</h2>
   <p>
-    Destacou-se pela administração eficiente e incentivo ao conhecimento.
-    Timbuktu foi um grande centro intelectual.
+    Timbuktu foi um dos maiores centros intelectuais
+    da África medieval, com mesquitas e universidades.
   </p>
 
-  <!-- LIVRO / SABER -->
-  <svg class="illustration" viewBox="0 0 200 200">
-    <rect x="40" y="50" width="120" height="100" rx="8" fill="#2ec4b6"/>
-    <line x1="100" y1="50" x2="100" y2="150" stroke="#000" />
-    <text x="60" y="110" fill="#000" font-size="12">SABER</text>
+  <!-- MESQUITA DE TIMBUKTU -->
+  <svg class="illustration" viewBox="0 0 300 200">
+    <rect x="40" y="90" width="220" height="60" fill="#b08d57"/>
+    <rect x="80" y="50" width="40" height="40" fill="#b08d57"/>
+    <rect x="140" y="40" width="40" height="50" fill="#b08d57"/>
+    <rect x="200" y="60" width="40" height="30" fill="#b08d57"/>
+    <line x1="60" y1="150" x2="240" y2="150" stroke="#000"/>
   </svg>
 </section>
 
-<!-- SLIDE 4 – CONGO -->
+<!-- SLIDE 4 – REINO DO CONGO -->
 <section class="slide">
   <h2>Reino do Congo</h2>
   <p>
-    Possuía governo centralizado. O rei, chamado Manicongo,
+    Possuía governo centralizado.
+    O rei, chamado Manicongo,
     mantinha relações diplomáticas com a Europa.
   </p>
 
-  <!-- COROA -->
-  <svg class="illustration" viewBox="0 0 200 200">
-    <polygon points="30,120 60,60 100,120 140,60 170,120"
+  <!-- COROA AFRICANA -->
+  <svg class="illustration" viewBox="0 0 300 200">
+    <polygon points="40,130 80,70 120,130 160,70 200,130 240,70 260,130"
              fill="#d4af37"/>
-    <rect x="30" y="120" width="140" height="30" fill="#b08d2f"/>
+    <rect x="40" y="130" width="220" height="30" fill="#b08d2f"/>
   </svg>
 </section>
 
@@ -149,16 +159,16 @@ button {
 <section class="slide">
   <h2>Grande Zimbábue</h2>
   <p>
-    Conhecido por suas construções em pedra,
-    sem argamassa, e pelo comércio de longa distância.
+    Destacou-se por suas muralhas de pedra
+    e pelo comércio de longa distância.
   </p>
 
-  <!-- MURALHA -->
-  <svg class="illustration" viewBox="0 0 200 200">
-    <rect x="30" y="80" width="140" height="60" fill="#777"/>
-    <rect x="40" y="70" width="20" height="20" fill="#999"/>
-    <rect x="80" y="70" width="20" height="20" fill="#999"/>
-    <rect x="120" y="70" width="20" height="20" fill="#999"/>
+  <!-- MURALHAS -->
+  <svg class="illustration" viewBox="0 0 300 200">
+    <rect x="30" y="90" width="240" height="70" fill="#777"/>
+    <rect x="50" y="70" width="30" height="20" fill="#999"/>
+    <rect x="120" y="70" width="30" height="20" fill="#999"/>
+    <rect x="190" y="70" width="30" height="20" fill="#999"/>
   </svg>
 </section>
 
@@ -166,8 +176,8 @@ button {
 <section class="slide">
   <h2>Conclusão</h2>
   <p>
-    Os reinos africanos demonstram que a África teve
-    protagonismo histórico, político e cultural.
+    Os reinos africanos demonstram que a África medieval
+    foi protagonista na política, na economia e no saber.
   </p>
 </section>
 
