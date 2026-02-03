@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Reinos Africanos - Anderson Pereira</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Reveal.js CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
 
@@ -13,10 +15,11 @@
       border: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       border-radius: 10px;
+      max-height: 420px;
     }
 
     .curiosidade {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255,255,255,0.12);
       padding: 16px;
       border-radius: 10px;
       border-left: 5px solid #ffd700;
@@ -31,6 +34,7 @@
 </head>
 
 <body>
+
 <div class="reveal">
 <div class="slides">
 
@@ -39,10 +43,6 @@
   <h3>Séculos XIII ao XV</h3>
   <p>Anderson Pereira<br>Licenciatura em História – Estácio</p>
   <img src="https://images.unsplash.com/photo-1523805081446-bc95bb28b58a?q=80&w=600" alt="Mapa da África">
-  <aside class="notes">
-    Introduzir a ideia de que a África medieval era politicamente organizada,
-    integrada ao comércio internacional e produtora de conhecimento.
-  </aside>
 </section>
 
 <section>
@@ -50,9 +50,9 @@
   <div style="display:flex; gap:20px; align-items:center;">
     <div style="flex:1;">
       <ul>
-        <li><strong>Gana:</strong> Controle das rotas do ouro.</li>
-        <li><strong>Mali:</strong> Comércio transaariano e Mansa Musa.</li>
-        <li><strong>Songhai:</strong> Educação e centros islâmicos.</li>
+        <li><strong>Gana:</strong> Controle do ouro.</li>
+        <li><strong>Mali:</strong> Comércio e Mansa Musa.</li>
+        <li><strong>Songhai:</strong> Timbuktu e educação.</li>
       </ul>
     </div>
     <div style="flex:1;">
@@ -60,29 +60,26 @@
     </div>
   </div>
   <div class="curiosidade">
-    💡 Mansa Musa causou inflação no Egito ao distribuir ouro em excesso.
+    💡 Mansa Musa distribuiu tanto ouro que causou inflação no Egito.
   </div>
-  <aside class="notes">
-    Destacar Timbuktu como centro intelectual, com bibliotecas e universidades.
-  </aside>
 </section>
 
 <section>
   <h2>Reino do Congo</h2>
   <div style="display:flex; gap:20px; align-items:center;">
     <div style="flex:1;">
-      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=400" alt="Arte africana">
+      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=400" alt="Arte Africana">
     </div>
     <div style="flex:1;">
       <ul>
-        <li><strong>Manicongo:</strong> Rei com poder central.</li>
-        <li><strong>Nzimbu:</strong> Sistema monetário próprio.</li>
-        <li><strong>Diplomacia:</strong> Relações com Europa cristã.</li>
+        <li><strong>Manicongo:</strong> Rei centralizado.</li>
+        <li><strong>Nzimbu:</strong> Moeda em conchas.</li>
+        <li><strong>Diplomacia:</strong> Relações com a Europa.</li>
       </ul>
     </div>
   </div>
   <div class="curiosidade">
-    💡 O Congo mantinha embaixadas e correspondência diplomática.
+    💡 O Congo mantinha embaixadas oficiais na Europa.
   </div>
 </section>
 
@@ -91,9 +88,9 @@
   <div style="display:flex; gap:20px; align-items:center;">
     <div style="flex:1;">
       <ul>
-        <li><strong>Arquitetura:</strong> Pedra sem argamassa.</li>
-        <li><strong>Economia:</strong> Ouro e comércio marítimo.</li>
-        <li><strong>Símbolo:</strong> Poder político regional.</li>
+        <li><strong>Arquitetura:</strong> Pedra sem cimento.</li>
+        <li><strong>Economia:</strong> Ouro e comércio.</li>
+        <li><strong>Símbolo:</strong> Poder regional.</li>
       </ul>
     </div>
     <div style="flex:1;">
@@ -101,34 +98,44 @@
     </div>
   </div>
   <div class="curiosidade">
-    💡 Achados arqueológicos incluem porcelanas chinesas.
+    💡 Achados chineses comprovam comércio internacional.
   </div>
 </section>
 
 <section>
   <h2>África Medieval</h2>
-  <p>Organização política, saber e protagonismo histórico.</p>
+  <p>Organização, cultura e protagonismo histórico.</p>
   <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=600" alt="África">
   <p><strong>Obrigado!</strong></p>
-  <aside class="notes">
-    Finalizar reforçando a desconstrução da ideia de “África sem história”.
-  </aside>
 </section>
 
 </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+<!-- Reveal.js JS -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+
 <script>
-  Reveal.initialize({
-    hash: true,
-    transition: 'slide',
-    slideNumber: true,
-    plugins: [ RevealNotes ]
+  window.addEventListener("load", function () {
+    Reveal.initialize({
+      transition: "slide",
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      center: true,
+
+      width: 1280,
+      height: 720,
+      margin: 0.05,
+      minScale: 1,
+      maxScale: 1,
+
+      hash: false,
+      plugins: [ RevealNotes ]
+    });
   });
 </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
 
 </body>
 </html>
