@@ -1,210 +1,172 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Reinos Africanos – Anderson Pereira</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reinos Africanos (Séculos XIII–XV)</title>
 
-  <!-- Reveal.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0b1d26;
+  color: #ffffff;
+}
 
-  <style>
-    :root {
-      --cor-ouro: #d4af37;
-      --cor-terra: #8b5e3c;
-      --cor-fundo: #0e0e0e;
-      --cor-texto: #f2f2f2;
-    }
+.slide {
+  min-height: 100vh;
+  padding: 60px 30px 80px;
+  display: none;
+}
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: var(--cor-fundo);
-      color: var(--cor-texto);
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
+.slide.active {
+  display: block;
+}
 
-    .reveal {
-      height: 100vh;
-    }
+h1, h2 {
+  color: #2ec4b6;
+}
 
-    /* Faixa decorativa lateral */
-    .reveal::before {
-      content: "";
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        var(--cor-ouro),
-        var(--cor-terra)
-      );
-      z-index: 10;
-    }
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
 
-    .reveal section {
-      padding: 20px 30px 40px 30px;
-    }
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
 
-    .reveal h1, .reveal h2 {
-      color: var(--cor-ouro);
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-    }
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #aaa;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.85em;
+}
 
-    .reveal h3 {
-      color: #e0e0e0;
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
-    }
+.nav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
 
-    .reveal p, .reveal li {
-      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
-    }
+button {
+  background: #2ec4b6;
+  border: none;
+  padding: 10px 16px;
+  margin: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-    .reveal section img {
-      max-width: 100%;
-      max-height: 35vh;
-      object-fit: contain;
-      border-radius: 10px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
-    }
-
-    .flex {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .flex {
-        flex-direction: column;
-      }
-    }
-
-    .curiosidade {
-      background: rgba(255,255,255,0.12);
-      padding: 12px;
-      border-radius: 8px;
-      border-left: 4px solid var(--cor-ouro);
-      margin-top: 12px;
-      font-size: 0.9rem;
-    }
-
-    /* Rodapé */
-    .footer {
-      position: fixed;
-      bottom: 8px;
-      right: 16px;
-      font-size: 0.7rem;
-      color: #cfcfcf;
-      opacity: 0.85;
-      z-index: 20;
-    }
-
-    .footer span {
-      color: var(--cor-ouro);
-      font-weight: bold;
-    }
-  </style>
+button:hover {
+  background: #3dd6c6;
+}
+</style>
 </head>
 
 <body>
 
-<div class="reveal">
-  <div class="slides">
-
-    <!-- SLIDE 1 -->
-    <section>
-      <h1>Reinos Africanos</h1>
-      <h3>Séculos XIII ao XV</h3>
-      <p>História • África Medieval</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_satellite_orthographic.jpg" alt="Mapa da África">
-    </section>
-
-    <!-- SLIDE 2 -->
-    <section>
-      <h2>O Sahel: Ouro e Saber</h2>
-      <div class="flex">
-        <div>
-          <ul>
-            <li><strong>Gana:</strong> Ouro e rotas comerciais.</li>
-            <li><strong>Mali:</strong> Império de Mansa Musa.</li>
-            <li><strong>Songhai:</strong> Timbuktu e educação.</li>
-          </ul>
-        </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Mansa_Musa.jpg" alt="Mansa Musa">
-      </div>
-      <div class="curiosidade">
-        💡 Mansa Musa é considerado o homem mais rico da história.
-      </div>
-    </section>
-
-    <!-- SLIDE 3 -->
-    <section>
-      <h2>Reino do Congo</h2>
-      <div class="flex">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Kongo_Kingdom_map.png" alt="Mapa do Reino do Congo">
-        <ul>
-          <li><strong>Manicongo:</strong> Poder centralizado.</li>
-          <li><strong>Nzimbu:</strong> Moeda em conchas.</li>
-          <li><strong>Diplomacia:</strong> Relações com a Europa.</li>
-        </ul>
-      </div>
-      <div class="curiosidade">
-        💡 O Congo mantinha embaixadores oficiais em Portugal.
-      </div>
-    </section>
-
-    <!-- SLIDE 4 -->
-    <section>
-      <h2>Grande Zimbábue</h2>
-      <div class="flex">
-        <ul>
-          <li><strong>Arquitetura:</strong> Muralhas de pedra.</li>
-          <li><strong>Economia:</strong> Ouro e comércio.</li>
-          <li><strong>Símbolo:</strong> Poder político.</li>
-        </ul>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Great_Zimbabwe_Ruins_2017.jpg" alt="Grande Zimbábue">
-      </div>
-      <div class="curiosidade">
-        💡 Construções feitas sem argamassa.
-      </div>
-    </section>
-
-    <!-- SLIDE 5 -->
-    <section>
-      <h2>África Medieval</h2>
-      <p>Organização política, cultura e protagonismo histórico.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Djinguereber_Mosque_Timbuktu.jpg" alt="Mesquita de Timbuktu">
-      <p><strong>Obrigado!</strong></p>
-    </section>
-
-  </div>
+<div class="nav">
+  <button onclick="prevSlide()">◀</button>
+  <button onclick="nextSlide()">▶</button>
 </div>
 
-<!-- Rodapé fixo -->
+<!-- SLIDE 1 -->
+<section class="slide active">
+  <h1>Reinos Africanos<br>séculos XIII ao XV</h1>
+  <p>
+    A África medieval foi marcada por reinos organizados, comércio intenso,
+    produção cultural e conhecimento avançado.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Africa_map_regions.svg" alt="Mapa da África">
+</section>
+
+<!-- SLIDE 2 – MALI -->
+<section class="slide">
+  <h2>Império do Mali</h2>
+  <p>
+    Um dos mais poderosos reinos africanos. Controlava o comércio de ouro e sal.
+    Teve como governante Mansa Musa, símbolo de riqueza e fé islâmica.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Mansa_Musa.jpg" alt="Mansa Musa">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Djinguereber_Mosque.jpg" alt="Mesquita de Timbuktu">
+</section>
+
+<!-- SLIDE 3 – SONGHAI -->
+<section class="slide">
+  <h2>Império Songhai</h2>
+  <p>
+    Destacou-se pela administração eficiente e incentivo à educação.
+    Timbuktu tornou-se um grande centro intelectual.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Sunni_Ali.jpg" alt="Sunni Ali">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Timbuktu_Manuscripts.jpg" alt="Manuscritos de Timbuktu">
+</section>
+
+<!-- SLIDE 4 – CONGO -->
+<section class="slide">
+  <h2>Reino do Congo</h2>
+  <p>
+    Possuía estrutura política centralizada.
+    O rei, chamado Manicongo, mantinha relações diplomáticas com a Europa.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Kingdom_of_Kongo_map.png" alt="Mapa do Reino do Congo">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Afonso_I_of_Kongo.jpg" alt="Rei Afonso I do Congo">
+</section>
+
+<!-- SLIDE 5 – GRANDE ZIMBÁBUE -->
+<section class="slide">
+  <h2>Grande Zimbábue</h2>
+  <p>
+    Conhecido por suas construções monumentais em pedra,
+    sem uso de argamassa, e pelo comércio com a Ásia.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Great_Zimbabwe_Ruins.jpg" alt="Ruínas do Grande Zimbábue">
+</section>
+
+<!-- SLIDE 6 – CONCLUSÃO -->
+<section class="slide">
+  <h2>Conclusão</h2>
+  <p>
+    Os reinos africanos demonstram que a África teve protagonismo histórico,
+    com economia, política e cultura próprias muito antes da colonização.
+  </p>
+</section>
+
 <div class="footer">
-  Aula de História • <span>Anderson Pereira</span>
+  Aula de História — Anderson Pereira
 </div>
 
-<!-- Reveal.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
 <script>
-  Reveal.initialize({
-    transition: "slide",
-    controls: true,
-    progress: true,
-    slideNumber: true,
-    center: true,
-    width: "100%",
-    height: "100%",
-    margin: 0.04,
-    minScale: 1,
-    maxScale: 1.2,
-    hash: false
-  });
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
 </script>
 
 </body>
