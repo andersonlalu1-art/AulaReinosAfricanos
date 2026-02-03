@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title>Reinos Africanos - Anderson Pereira</title>
+  <title>Reinos Africanos – Anderson Pereira</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Reveal.js -->
@@ -10,30 +10,57 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
 
   <style>
+    :root {
+      --cor-ouro: #d4af37;
+      --cor-terra: #8b5e3c;
+      --cor-fundo: #0e0e0e;
+      --cor-texto: #f2f2f2;
+    }
+
     html, body {
       height: 100%;
       margin: 0;
-      background: #000;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: "Helvetica Neue", Arial, sans-serif;
     }
 
     .reveal {
       height: 100vh;
     }
 
+    /* Faixa decorativa lateral */
+    .reveal::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        var(--cor-ouro),
+        var(--cor-terra)
+      );
+      z-index: 10;
+    }
+
     .reveal section {
-      padding: 20px;
+      padding: 20px 30px 40px 30px;
     }
 
     .reveal h1, .reveal h2 {
-      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      color: var(--cor-ouro);
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
     }
 
     .reveal h3 {
+      color: #e0e0e0;
       font-size: clamp(1.2rem, 3vw, 1.6rem);
     }
 
     .reveal p, .reveal li {
-      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
     }
 
     .reveal section img {
@@ -41,12 +68,12 @@
       max-height: 35vh;
       object-fit: contain;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
     }
 
     .flex {
       display: flex;
-      gap: 16px;
+      gap: 18px;
       align-items: center;
     }
 
@@ -60,9 +87,25 @@
       background: rgba(255,255,255,0.12);
       padding: 12px;
       border-radius: 8px;
-      border-left: 4px solid #ffd700;
+      border-left: 4px solid var(--cor-ouro);
       margin-top: 12px;
       font-size: 0.9rem;
+    }
+
+    /* Rodapé */
+    .footer {
+      position: fixed;
+      bottom: 8px;
+      right: 16px;
+      font-size: 0.7rem;
+      color: #cfcfcf;
+      opacity: 0.85;
+      z-index: 20;
+    }
+
+    .footer span {
+      color: var(--cor-ouro);
+      font-weight: bold;
     }
   </style>
 </head>
@@ -70,75 +113,84 @@
 <body>
 
 <div class="reveal">
-<div class="slides">
+  <div class="slides">
 
-<section>
-  <h1>Reinos Africanos</h1>
-  <h3>Séculos XIII ao XV</h3>
-  <p>Anderson Pereira<br>Licenciatura em História – Estácio</p>
-  <img src="https://images.unsplash.com/photo-1523805081446-bc95bb28b58a?q=80&w=600" alt="Mapa da África">
-</section>
+    <!-- SLIDE 1 -->
+    <section>
+      <h1>Reinos Africanos</h1>
+      <h3>Séculos XIII ao XV</h3>
+      <p>História • África Medieval</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_satellite_orthographic.jpg" alt="Mapa da África">
+    </section>
 
-<section>
-  <h2>O Sahel: Ouro e Saber</h2>
-  <div class="flex">
-    <div>
-      <ul>
-        <li><strong>Gana:</strong> Controle do ouro.</li>
-        <li><strong>Mali:</strong> Comércio e Mansa Musa.</li>
-        <li><strong>Songhai:</strong> Timbuktu e educação.</li>
-      </ul>
-    </div>
-    <img src="https://images.unsplash.com/photo-1590273466070-40c466b4432d?q=80&w=400" alt="Timbuktu">
-  </div>
-  <div class="curiosidade">
-    💡 Mansa Musa distribuiu tanto ouro que causou inflação no Egito.
-  </div>
-</section>
+    <!-- SLIDE 2 -->
+    <section>
+      <h2>O Sahel: Ouro e Saber</h2>
+      <div class="flex">
+        <div>
+          <ul>
+            <li><strong>Gana:</strong> Ouro e rotas comerciais.</li>
+            <li><strong>Mali:</strong> Império de Mansa Musa.</li>
+            <li><strong>Songhai:</strong> Timbuktu e educação.</li>
+          </ul>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Mansa_Musa.jpg" alt="Mansa Musa">
+      </div>
+      <div class="curiosidade">
+        💡 Mansa Musa é considerado o homem mais rico da história.
+      </div>
+    </section>
 
-<section>
-  <h2>Reino do Congo</h2>
-  <div class="flex">
-    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=400" alt="Arte Africana">
-    <ul>
-      <li><strong>Manicongo:</strong> Rei centralizado.</li>
-      <li><strong>Nzimbu:</strong> Moeda em conchas.</li>
-      <li><strong>Diplomacia:</strong> Relações com a Europa.</li>
-    </ul>
-  </div>
-  <div class="curiosidade">
-    💡 O Congo enviava representantes diplomáticos à Europa.
-  </div>
-</section>
+    <!-- SLIDE 3 -->
+    <section>
+      <h2>Reino do Congo</h2>
+      <div class="flex">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Kongo_Kingdom_map.png" alt="Mapa do Reino do Congo">
+        <ul>
+          <li><strong>Manicongo:</strong> Poder centralizado.</li>
+          <li><strong>Nzimbu:</strong> Moeda em conchas.</li>
+          <li><strong>Diplomacia:</strong> Relações com a Europa.</li>
+        </ul>
+      </div>
+      <div class="curiosidade">
+        💡 O Congo mantinha embaixadores oficiais em Portugal.
+      </div>
+    </section>
 
-<section>
-  <h2>Grande Zimbábue</h2>
-  <div class="flex">
-    <ul>
-      <li><strong>Arquitetura:</strong> Pedra sem cimento.</li>
-      <li><strong>Economia:</strong> Ouro e comércio.</li>
-      <li><strong>Símbolo:</strong> Poder regional.</li>
-    </ul>
-    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=400" alt="Grande Zimbábue">
-  </div>
-  <div class="curiosidade">
-    💡 Foram encontrados objetos chineses nas escavações.
-  </div>
-</section>
+    <!-- SLIDE 4 -->
+    <section>
+      <h2>Grande Zimbábue</h2>
+      <div class="flex">
+        <ul>
+          <li><strong>Arquitetura:</strong> Muralhas de pedra.</li>
+          <li><strong>Economia:</strong> Ouro e comércio.</li>
+          <li><strong>Símbolo:</strong> Poder político.</li>
+        </ul>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Great_Zimbabwe_Ruins_2017.jpg" alt="Grande Zimbábue">
+      </div>
+      <div class="curiosidade">
+        💡 Construções feitas sem argamassa.
+      </div>
+    </section>
 
-<section>
-  <h2>África Medieval</h2>
-  <p>Organização, cultura e protagonismo histórico.</p>
-  <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=600" alt="África">
-  <p><strong>Obrigado!</strong></p>
-</section>
+    <!-- SLIDE 5 -->
+    <section>
+      <h2>África Medieval</h2>
+      <p>Organização política, cultura e protagonismo histórico.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Djinguereber_Mosque_Timbuktu.jpg" alt="Mesquita de Timbuktu">
+      <p><strong>Obrigado!</strong></p>
+    </section>
 
+  </div>
 </div>
+
+<!-- Rodapé fixo -->
+<div class="footer">
+  Aula de História • <span>Anderson Pereira</span>
 </div>
 
-<!-- Scripts -->
+<!-- Reveal.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-
 <script>
   Reveal.initialize({
     transition: "slide",
@@ -146,14 +198,11 @@
     progress: true,
     slideNumber: true,
     center: true,
-
     width: "100%",
     height: "100%",
     margin: 0.04,
-
     minScale: 1,
     maxScale: 1.2,
-
     hash: false
   });
 </script>
