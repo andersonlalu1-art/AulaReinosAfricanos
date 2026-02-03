@@ -9,13 +9,13 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #0b1d26;
+  background: linear-gradient(180deg, #0b1d26, #000);
   color: #ffffff;
 }
 
 .slide {
   min-height: 100vh;
-  padding: 60px 30px 80px;
+  padding: 60px 24px 90px;
   display: none;
 }
 
@@ -24,26 +24,29 @@ body {
 }
 
 h1, h2 {
-  color: #2ec4b6;
+  color: #d4af37;
 }
 
-p {
+p, li {
   font-size: 1.1em;
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin: 20px 0;
+ul {
+  margin-top: 10px;
+}
+
+.illustration {
+  margin: 30px auto;
+  max-width: 320px;
 }
 
 .footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: rgba(0,0,0,0.7);
-  color: #aaa;
+  background: rgba(0,0,0,0.75);
+  color: #d4af37;
   text-align: center;
   padding: 8px;
   font-size: 0.85em;
@@ -51,22 +54,18 @@ img {
 
 .nav {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
 }
 
 button {
-  background: #2ec4b6;
+  background: #d4af37;
   border: none;
-  padding: 10px 16px;
-  margin: 4px;
+  padding: 10px 14px;
+  margin-left: 4px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-}
-
-button:hover {
-  background: #3dd6c6;
 }
 </style>
 </head>
@@ -80,82 +79,109 @@ button:hover {
 
 <!-- SLIDE 1 -->
 <section class="slide active">
-  <h1>Reinos Africanos<br>séculos XIII ao XV</h1>
+  <h1>Reinos Africanos<br>(Séculos XIII–XV)</h1>
   <p>
-    A África medieval foi marcada por reinos organizados, comércio intenso,
-    produção cultural e conhecimento avançado.
+    A África medieval foi marcada por reinos organizados, comércio intenso
+    e produção de conhecimento.
   </p>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Africa_map_regions.svg" alt="Mapa da África">
+  <!-- MAPA DA ÁFRICA (SVG) -->
+  <svg class="illustration" viewBox="0 0 200 200">
+    <path d="M100 10 C150 20 180 70 160 120 C140 170 100 190 80 170 C40 150 20 100 40 60 C60 30 80 20 100 10Z"
+          fill="#d4af37"/>
+    <text x="65" y="105" fill="#000" font-size="12">ÁFRICA</text>
+  </svg>
 </section>
 
-<!-- SLIDE 2 – MALI -->
+<!-- SLIDE 2 – SAHEL -->
 <section class="slide">
-  <h2>Império do Mali</h2>
-  <p>
-    Um dos mais poderosos reinos africanos. Controlava o comércio de ouro e sal.
-    Teve como governante Mansa Musa, símbolo de riqueza e fé islâmica.
-  </p>
+  <h2>O Sahel: Ouro e Saber</h2>
+  <ul>
+    <li><b>Gana</b>: Ouro e rotas comerciais</li>
+    <li><b>Mali</b>: Império de Mansa Musa</li>
+    <li><b>Songhai</b>: Timbuktu e educação</li>
+  </ul>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Mansa_Musa.jpg" alt="Mansa Musa">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Djinguereber_Mosque.jpg" alt="Mesquita de Timbuktu">
+  <!-- REI -->
+  <svg class="illustration" viewBox="0 0 200 200">
+    <circle cx="100" cy="70" r="30" fill="#d4af37"/>
+    <rect x="70" y="100" width="60" height="70" fill="#2ec4b6"/>
+    <rect x="60" y="50" width="80" height="20" fill="#b08d2f"/>
+    <text x="55" y="190" fill="#d4af37" font-size="12">Mansa Musa</text>
+  </svg>
+
+  <p>💡 Mansa Musa é considerado o homem mais rico da história.</p>
 </section>
 
 <!-- SLIDE 3 – SONGHAI -->
 <section class="slide">
   <h2>Império Songhai</h2>
   <p>
-    Destacou-se pela administração eficiente e incentivo à educação.
-    Timbuktu tornou-se um grande centro intelectual.
+    Destacou-se pela administração eficiente e incentivo ao conhecimento.
+    Timbuktu foi um grande centro intelectual.
   </p>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Sunni_Ali.jpg" alt="Sunni Ali">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Timbuktu_Manuscripts.jpg" alt="Manuscritos de Timbuktu">
+  <!-- LIVRO / SABER -->
+  <svg class="illustration" viewBox="0 0 200 200">
+    <rect x="40" y="50" width="120" height="100" rx="8" fill="#2ec4b6"/>
+    <line x1="100" y1="50" x2="100" y2="150" stroke="#000" />
+    <text x="60" y="110" fill="#000" font-size="12">SABER</text>
+  </svg>
 </section>
 
 <!-- SLIDE 4 – CONGO -->
 <section class="slide">
   <h2>Reino do Congo</h2>
   <p>
-    Possuía estrutura política centralizada.
-    O rei, chamado Manicongo, mantinha relações diplomáticas com a Europa.
+    Possuía governo centralizado. O rei, chamado Manicongo,
+    mantinha relações diplomáticas com a Europa.
   </p>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Kingdom_of_Kongo_map.png" alt="Mapa do Reino do Congo">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Afonso_I_of_Kongo.jpg" alt="Rei Afonso I do Congo">
+  <!-- COROA -->
+  <svg class="illustration" viewBox="0 0 200 200">
+    <polygon points="30,120 60,60 100,120 140,60 170,120"
+             fill="#d4af37"/>
+    <rect x="30" y="120" width="140" height="30" fill="#b08d2f"/>
+  </svg>
 </section>
 
 <!-- SLIDE 5 – GRANDE ZIMBÁBUE -->
 <section class="slide">
   <h2>Grande Zimbábue</h2>
   <p>
-    Conhecido por suas construções monumentais em pedra,
-    sem uso de argamassa, e pelo comércio com a Ásia.
+    Conhecido por suas construções em pedra,
+    sem argamassa, e pelo comércio de longa distância.
   </p>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Great_Zimbabwe_Ruins.jpg" alt="Ruínas do Grande Zimbábue">
+  <!-- MURALHA -->
+  <svg class="illustration" viewBox="0 0 200 200">
+    <rect x="30" y="80" width="140" height="60" fill="#777"/>
+    <rect x="40" y="70" width="20" height="20" fill="#999"/>
+    <rect x="80" y="70" width="20" height="20" fill="#999"/>
+    <rect x="120" y="70" width="20" height="20" fill="#999"/>
+  </svg>
 </section>
 
 <!-- SLIDE 6 – CONCLUSÃO -->
 <section class="slide">
   <h2>Conclusão</h2>
   <p>
-    Os reinos africanos demonstram que a África teve protagonismo histórico,
-    com economia, política e cultura próprias muito antes da colonização.
+    Os reinos africanos demonstram que a África teve
+    protagonismo histórico, político e cultural.
   </p>
 </section>
 
 <div class="footer">
-  Aula de História — Anderson Pereira
+  Aula de História • Anderson Pereira
 </div>
 
 <script>
 let current = 0;
 const slides = document.querySelectorAll(".slide");
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
+function showSlide(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
 }
 
 function nextSlide() {
