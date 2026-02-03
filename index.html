@@ -5,30 +5,64 @@
   <title>Reinos Africanos - Anderson Pereira</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Reveal.js CSS -->
+  <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
 
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #000;
+    }
+
+    .reveal {
+      height: 100vh;
+    }
+
+    .reveal section {
+      padding: 20px;
+    }
+
+    .reveal h1, .reveal h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+    }
+
+    .reveal h3 {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+    }
+
+    .reveal p, .reveal li {
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+
     .reveal section img {
-      background: none;
-      border: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      max-width: 100%;
+      max-height: 35vh;
+      object-fit: contain;
       border-radius: 10px;
-      max-height: 420px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .flex {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .flex {
+        flex-direction: column;
+      }
     }
 
     .curiosidade {
       background: rgba(255,255,255,0.12);
-      padding: 16px;
-      border-radius: 10px;
-      border-left: 5px solid #ffd700;
-      margin-top: 20px;
-      font-size: 0.65em;
-    }
-
-    ul li {
-      margin-bottom: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 4px solid #ffd700;
+      margin-top: 12px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -47,17 +81,15 @@
 
 <section>
   <h2>O Sahel: Ouro e Saber</h2>
-  <div style="display:flex; gap:20px; align-items:center;">
-    <div style="flex:1;">
+  <div class="flex">
+    <div>
       <ul>
         <li><strong>Gana:</strong> Controle do ouro.</li>
         <li><strong>Mali:</strong> Comércio e Mansa Musa.</li>
         <li><strong>Songhai:</strong> Timbuktu e educação.</li>
       </ul>
     </div>
-    <div style="flex:1;">
-      <img src="https://images.unsplash.com/photo-1590273466070-40c466b4432d?q=80&w=400" alt="Timbuktu">
-    </div>
+    <img src="https://images.unsplash.com/photo-1590273466070-40c466b4432d?q=80&w=400" alt="Timbuktu">
   </div>
   <div class="curiosidade">
     💡 Mansa Musa distribuiu tanto ouro que causou inflação no Egito.
@@ -66,39 +98,31 @@
 
 <section>
   <h2>Reino do Congo</h2>
-  <div style="display:flex; gap:20px; align-items:center;">
-    <div style="flex:1;">
-      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=400" alt="Arte Africana">
-    </div>
-    <div style="flex:1;">
-      <ul>
-        <li><strong>Manicongo:</strong> Rei centralizado.</li>
-        <li><strong>Nzimbu:</strong> Moeda em conchas.</li>
-        <li><strong>Diplomacia:</strong> Relações com a Europa.</li>
-      </ul>
-    </div>
+  <div class="flex">
+    <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=400" alt="Arte Africana">
+    <ul>
+      <li><strong>Manicongo:</strong> Rei centralizado.</li>
+      <li><strong>Nzimbu:</strong> Moeda em conchas.</li>
+      <li><strong>Diplomacia:</strong> Relações com a Europa.</li>
+    </ul>
   </div>
   <div class="curiosidade">
-    💡 O Congo mantinha embaixadas oficiais na Europa.
+    💡 O Congo enviava representantes diplomáticos à Europa.
   </div>
 </section>
 
 <section>
   <h2>Grande Zimbábue</h2>
-  <div style="display:flex; gap:20px; align-items:center;">
-    <div style="flex:1;">
-      <ul>
-        <li><strong>Arquitetura:</strong> Pedra sem cimento.</li>
-        <li><strong>Economia:</strong> Ouro e comércio.</li>
-        <li><strong>Símbolo:</strong> Poder regional.</li>
-      </ul>
-    </div>
-    <div style="flex:1;">
-      <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=400" alt="Grande Zimbábue">
-    </div>
+  <div class="flex">
+    <ul>
+      <li><strong>Arquitetura:</strong> Pedra sem cimento.</li>
+      <li><strong>Economia:</strong> Ouro e comércio.</li>
+      <li><strong>Símbolo:</strong> Poder regional.</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=400" alt="Grande Zimbábue">
   </div>
   <div class="curiosidade">
-    💡 Achados chineses comprovam comércio internacional.
+    💡 Foram encontrados objetos chineses nas escavações.
   </div>
 </section>
 
@@ -112,28 +136,25 @@
 </div>
 </div>
 
-<!-- Reveal.js JS -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
 
 <script>
-  window.addEventListener("load", function () {
-    Reveal.initialize({
-      transition: "slide",
-      slideNumber: true,
-      controls: true,
-      progress: true,
-      center: true,
+  Reveal.initialize({
+    transition: "slide",
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    center: true,
 
-      width: 1280,
-      height: 720,
-      margin: 0.05,
-      minScale: 1,
-      maxScale: 1,
+    width: "100%",
+    height: "100%",
+    margin: 0.04,
 
-      hash: false,
-      plugins: [ RevealNotes ]
-    });
+    minScale: 1,
+    maxScale: 1.2,
+
+    hash: false
   });
 </script>
 
