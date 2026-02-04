@@ -1,112 +1,495 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Reinos Africanos – História</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinos Africanos – Anderson Pereira</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --bg: #0a0f1d;
+            --text: #e2e8f0;
+            --card: rgba(30, 41, 59, 0.8);
+            --accent: #92400e;
+        }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            overflow: hidden;
+        }
 
-  <!-- Reveal.js -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
+        /* Estrutura do Slider */
+        .slider {
+            display: flex;
+            width: 600%; /* 6 slides */
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-  <style>
-    body {
-      background: linear-gradient(135deg, #0b1a2a, #020617);
-    }
+        section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+        }
 
-    h1, h2 {
-      color: #facc15;
-    }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
 
-    p, li {
-      font-size: 1.1em;
-    }
+        h1 { font-size: 2.8rem; color: var(--gold); margin: 0; text-transform: uppercase; letter-spacing: 3px; }
+        h2 { font-size: 2rem; color: var(--gold); margin-bottom: 15px; }
 
-    .reveal section img {
-      max-width: 60%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      margin-top: 15px;
-    }
+        .slide-layout {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            background: var(--card);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            min-height: 450px;
+        }
 
-    footer {
-      position: fixed;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9em;
-      color: #facc15;
-      opacity: 0.9;
-    }
-  </style>
+        .text-content { flex: 1.2; text-align: left; }
+        .visual-content { flex: 0.8; position: relative; }
+
+        /* Espaço da Imagem Gerada por IA */
+        .ai-image-container {
+            width: 100%;
+            height: 350px;
+            background: #111;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .ai-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .loader {
+            border: 4px solid rgba(255,255,255,0.1);
+            border-left-color: var(--gold);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .gen-btn {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .gen-btn:hover { background: #fff; transform: scale(1.05); }
+
+        /* Chat da IA */
+        .ai-chat-box {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--gold);
+            min-height: 40px;
+        }
+
+        /* UI de Navegação */
+        .nav-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .btn-round {
+            background: var(--gold);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--gold);
+            z-index: 1000;
+            transition: width 0.3s;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 15px;
+            left: 20px;
+            color: var(--gold);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e293b;
+            border: 2px solid var(--gold);
+            padding: 30px;
+            border-radius: 15px;
+            z-index: 2000;
+            display: none;
+            max-width: 500px;
+            width: 80%;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1999;
+            display: none;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+    </style>
 </head>
-
 <body>
 
-<div class="reveal">
-<div class="slides">
+<div class="progress-bar" id="progress"></div>
 
-  <!-- SLIDE 1 -->
-  <section>
-    <h1>Reinos Africanos<br>séculos XIII a XV</h1>
-    <p>África medieval: comércio, poder e conhecimento</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Africa_trade_routes_14th_century.png" alt="Mapa das rotas comerciais africanas">
-  </section>
+<div class="slider" id="slider">
+    
+    <!-- SLIDE 1: INTRODUÇÃO -->
+    <section>
+        <div class="container">
+            <h1>Reinos Africanos</h1>
+            <p>Soberania, Riqueza e Conhecimento (Séc. XIII - XV)</p>
+            <div class="ai-image-container" id="img-0">
+                <div class="loader"></div>
+                <span id="status-0" style="margin-top:10px; font-size:0.8rem">Iniciando geração...</span>
+                <img id="view-0" alt="Capa">
+            </div>
+            <p style="margin-top: 20px;"><strong>Anderson Pereira</strong></p>
+            <button class="gen-btn" onclick="askGemini('Dê uma introdução curta e impactante sobre a importância de estudar os impérios africanos pré-coloniais.')">Falar com o Griot ✨</button>
+        </div>
+    </section>
 
-  <!-- SLIDE 2 -->
-  <section>
-    <h2>Império do Mali</h2>
-    <p>Grande centro de comércio e saber. Destaque para o ouro e a cidade de Timbuktu.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Mali_Empire_map.svg" alt="Mapa do Império do Mali">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mansa_Musa.jpg" alt="Mansa Musa">
-  </section>
+    <!-- SLIDE 2: MALI -->
+    <section>
+        <div class="container">
+            <h2>Império do Mali</h2>
+            <div class="slide-layout">
+                <div class="text-content">
+                    <ul>
+                        <li><strong>Mansa Musa:</strong> O controle das rotas de ouro mundial.</li>
+                        <li>Administração centralizada e expansionista.</li>
+                        <li>A abundância de recursos que mudou o câmbio no Egito.</li>
+                    </ul>
+                    <div class="ai-chat-box" id="chat-2">Aguardando interação...</div>
+                    <button class="gen-btn" onclick="askGemini('Conte uma curiosidade sobre as minas de ouro do Mali e como elas eram protegidas.', 'chat-2')">Curiosidade do Mali ✨</button>
+                </div>
+                <div class="visual-content">
+                    <div class="ai-image-container" id="img-1">
+                        <div class="loader"></div>
+                        <img id="view-1" alt="Mali">
+                    </div>
+                    <p style="font-size:0.7rem; margin-top:5px; color:var(--gold)">Ilustração gerada por IA</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- SLIDE 3 -->
-  <section>
-    <h2>Império Songhai</h2>
-    <p>Fortalecimento político e intelectual. Universidades e bibliotecas.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Songhai_Empire_map.svg" alt="Mapa do Império Songhai">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Askia_Muhammad.jpg" alt="Askia Muhammad">
-  </section>
+    <!-- SLIDE 3: SONGHAI -->
+    <section>
+        <div class="container">
+            <h2>Império Songhai</h2>
+            <div class="slide-layout">
+                <div class="visual-content">
+                    <div class="ai-image-container" id="img-2">
+                        <div class="loader"></div>
+                        <img id="view-2" alt="Songhai">
+                    </div>
+                </div>
+                <div class="text-content">
+                    <ul>
+                        <li><strong>Timbuktu:</strong> O coração universitário da África.</li>
+                        <li>Produção em massa de livros e manuscritos científicos.</li>
+                        <li>A dinastia Askia e a burocracia eficiente.</li>
+                    </ul>
+                    <div class="ai-chat-box" id="chat-3">Aguardando interação...</div>
+                    <button class="gen-btn" onclick="askGemini('Descreva como era a biblioteca de um acadêmico em Timbuktu no século 15.', 'chat-3')">Consultar Biblioteca ✨</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- SLIDE 4 -->
-  <section>
-    <h2>Reino do Congo</h2>
-    <p>Governo centralizado e relações diplomáticas com Portugal e o Vaticano.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Kongo_kingdom_map.png" alt="Mapa do Reino do Congo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Afonso_I_of_Kongo.jpg" alt="Rei Afonso I do Congo">
-  </section>
+    <!-- SLIDE 4: CONGO -->
+    <section>
+        <div class="container">
+            <h2>Reino do Congo</h2>
+            <div class="slide-layout">
+                <div class="text-content">
+                    <ul>
+                        <li>O <strong>Manicongo</strong> e a autoridade sobre províncias.</li>
+                        <li>Sistema monetário baseado no <strong>Nzimbu</strong>.</li>
+                        <li>Diplomacia estratégica e correspondência oficial.</li>
+                    </ul>
+                    <div class="ai-chat-box" id="chat-4">Aguardando interação...</div>
+                    <button class="gen-btn" onclick="askGemini('Como era a corte do Manicongo e qual o significado do Nzimbu na economia local?', 'chat-4')">Ver Diplomacia ✨</button>
+                </div>
+                <div class="visual-content">
+                    <div class="ai-image-container" id="img-3">
+                        <div class="loader"></div>
+                        <img id="view-3" alt="Congo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- SLIDE 5 -->
-  <section>
-    <h2>Grande Zimbábue</h2>
-    <p>Arquitetura monumental em pedra e comércio internacional.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Great_Zimbabwe_map.svg" alt="Mapa do Grande Zimbábue">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Great_Zimbabwe_ruins.jpg" alt="Ruínas do Grande Zimbábue">
-  </section>
+    <!-- SLIDE 5: ZIMBÁBUE -->
+    <section>
+        <div class="container">
+            <h2>Grande Zimbábue</h2>
+            <div class="slide-layout">
+                <div class="visual-content">
+                    <div class="ai-image-container" id="img-4">
+                        <div class="loader"></div>
+                        <img id="view-4" alt="Zimbábue">
+                    </div>
+                </div>
+                <div class="text-content">
+                    <ul>
+                        <li>Engenharia monumental: pedras sem argamassa.</li>
+                        <li>Centro comercial entre o interior e o Oceano Índico.</li>
+                        <li>Conexões que chegavam à China e à Índia.</li>
+                    </ul>
+                    <div class="ai-chat-box" id="chat-5">Aguardando interação...</div>
+                    <button class="gen-btn" onclick="askGemini('Explique por que as muralhas do Zimbábue são um mistério de engenharia até hoje.', 'chat-5')">Análise de Engenharia ✨</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- SLIDE 6 -->
-  <section>
-    <h2>Conclusão</h2>
-    <p>A África medieval teve protagonismo histórico, político e cultural.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/African_civilizations.png" alt="Civilizações africanas">
-  </section>
+    <!-- SLIDE 6: CONCLUSÃO -->
+    <section>
+        <div class="container">
+            <h1>Protagonismo Africano</h1>
+            <div class="ai-image-container" style="max-width: 500px; margin: 20px auto;" id="img-5">
+                <div class="loader"></div>
+                <img id="view-5" alt="Final">
+            </div>
+            <p>A história da África é uma história de agência e complexidade.</p>
+            <button class="gen-btn" onclick="askGemini('Crie uma mensagem de encerramento poderosa para uma aula sobre a grandeza da África medieval.')">Mensagem Final ✨</button>
+        </div>
+    </section>
 
 </div>
+
+<div class="overlay" id="overlay" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+    <h3 style="color:var(--gold); margin-top:0">Mensagem do Griot ✨</h3>
+    <p id="modal-text"></p>
+    <button class="gen-btn" style="width:100%" onclick="closeModal()">Fechar</button>
 </div>
 
-<footer>
-  Aula de História • Anderson Pereira
-</footer>
+<div class="nav-buttons">
+    <button class="btn-round" onclick="move(-1)">◀</button>
+    <button class="btn-round" onclick="move(1)">▶</button>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+<div class="footer">Aula de História • Anderson Pereira</div>
+
 <script>
-  Reveal.initialize({
-    hash: true,
-    slideNumber: true,
-    transition: 'slide'
-  });
+    const apiKey = ""; // Fornecido pelo ambiente de execução
+    let current = 0;
+    const total = 6;
+    const slider = document.getElementById('slider');
+    const progress = document.getElementById('progress');
+
+    const imagePrompts = [
+        "A stylized high-quality historical map illustration of medieval African empires, golden highlights, artistic parchment background.",
+        "A majestic portrait of an African king from the 14th century Mali Empire, wearing golden robes and crown, holding a gold scepter, realistic cinematic style.",
+        "A detailed illustration of the ancient mud-brick Djinguereber Mosque in Timbuktu under a clear sky, scholarly atmosphere, high quality.",
+        "An artistic depiction of a 15th-century African monarch (Manicongo) on a throne, surrounded by advisors and ceremonial objects, realistic lighting.",
+        "A wide shot of the Great Zimbabwe stone walls, massive granite structures without mortar, historical reconstruction style, sunset light.",
+        "A group of ancient African manuscripts and golden artifacts displayed elegantly, representing the intellectual and material legacy of Africa."
+    ];
+
+    function move(dir) {
+        current = (current + dir + total) % total;
+        slider.style.transform = `translateX(-${current * 100}vw)`;
+        progress.style.width = `${((current + 1) / total) * 100}%`;
+    }
+
+    // Função auxiliar para chamadas com Exponential Backoff
+    async function fetchWithRetry(url, options, maxRetries = 5) {
+        let retries = 0;
+        while (retries < maxRetries) {
+            try {
+                const response = await fetch(url, options);
+                if (response.ok) {
+                    const text = await response.text();
+                    if (!text) throw new Error("Resposta vazia do servidor");
+                    return JSON.parse(text);
+                }
+                if (response.status === 429 || response.status >= 500) {
+                    throw new Error(`Erro de servidor: ${response.status}`);
+                }
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || "Erro desconhecido na API");
+            } catch (err) {
+                retries++;
+                if (retries >= maxRetries) throw err;
+                const delay = Math.pow(2, retries - 1) * 1000;
+                await new Promise(res => setTimeout(res, delay));
+            }
+        }
+    }
+
+    async function generateImages() {
+        for (let i = 0; i < imagePrompts.length; i++) {
+            const container = document.getElementById(`img-${i}`);
+            const imgElement = document.getElementById(`view-${i}`);
+            const loader = container.querySelector('.loader');
+            const statusText = document.getElementById(`status-${i}`);
+
+            if (statusText) statusText.innerText = "Convocando a arte...";
+
+            try {
+                const result = await fetchWithRetry(
+                    `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            instances: { prompt: imagePrompts[i] },
+                            parameters: { sampleCount: 1 }
+                        })
+                    }
+                );
+
+                if (result.predictions && result.predictions[0]) {
+                    const base64 = result.predictions[0].bytesBase64Encoded;
+                    imgElement.src = `data:image/png;base64,${base64}`;
+                    imgElement.onload = () => {
+                        imgElement.style.display = 'block';
+                        loader.style.display = 'none';
+                        if (statusText) statusText.style.display = 'none';
+                    };
+                }
+            } catch (error) {
+                console.error(`Erro no slide ${i}:`, error);
+                loader.style.display = 'none';
+                if (statusText) {
+                    statusText.style.color = "#ff4444";
+                    statusText.innerText = "Falha na conexão artística.";
+                }
+            }
+        }
+    }
+
+    async function askGemini(query, targetId = null) {
+        const modal = document.getElementById('modal');
+        const overlay = document.getElementById('overlay');
+        const modalText = document.getElementById('modal-text');
+        
+        if (targetId) document.getElementById(targetId).innerText = "O Griot está pensando...";
+        else {
+            modalText.innerText = "O Griot está pensando...";
+            modal.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        const systemPrompt = "Você é um historiador especialista em reinos africanos medievais. Responda em Português de forma didática e inspiradora. Máximo 100 palavras.";
+
+        try {
+            const result = await fetchWithRetry(
+                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: query }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                }
+            );
+
+            const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (targetId) document.getElementById(targetId).innerText = text;
+            else modalText.innerText = text;
+
+        } catch (error) {
+            const errorMsg = "Ocorreu uma falha na conexão. Tente novamente.";
+            if (targetId) document.getElementById(targetId).innerText = errorMsg;
+            else modalText.innerText = errorMsg;
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    window.onload = () => {
+        progress.style.width = `${(1 / total) * 100}%`;
+        generateImages();
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "ArrowRight") move(1);
+        if (e.key === "ArrowLeft") move(-1);
+        if (e.key === "Escape") closeModal();
+    });
 </script>
 
 </body>
