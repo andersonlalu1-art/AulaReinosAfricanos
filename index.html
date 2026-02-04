@@ -1,252 +1,134 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grandes Impérios Africanos</title>
-    <style>
-        :root {
-            --primary-color: #8B4513; /* Marrom terra */
-            --secondary-color: #D2691E; /* Chocolate */
-            --accent-color: #FFD700; /* Dourado */
-            --text-color: #333;
-            --bg-color: #f4f4f9;
-        }
+  <meta charset="utf-8">
+  <title>Reinos Africanos - Anderson Pereira</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            border-bottom: 5px solid var(--accent-color);
-        }
+  <style>
+    .reveal section img {
+      background: none;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border-radius: 10px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
+    .curiosidade {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 16px;
+      border-radius: 10px;
+      border-left: 5px solid #ffd700;
+      margin-top: 20px;
+      font-size: 0.65em;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* Seção de Introdução com Mapa Antigo */
-        .intro-section {
-            text-align: center;
-            margin-bottom: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .intro-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            border: 2px solid var(--secondary-color);
-        }
-
-        /* Grid dos Reinos */
-        .kingdom-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .kingdom-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .kingdom-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .kingdom-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .kingdom-content {
-            padding: 20px;
-        }
-
-        .kingdom-content h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-
-        .info-tag {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        /* Seção Especial para Zimbábue (Destaque) */
-        .featured-section {
-            margin-top: 40px;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .featured-image {
-            flex: 1 1 400px;
-            min-height: 300px;
-        }
-        
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .featured-text {
-            flex: 1 1 400px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .featured-text h2 {
-            color: var(--primary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .kingdom-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
+
 <body>
+<div class="reveal">
+<div class="slides">
 
-    <header>
-        <div class="container">
-            <h1>Reinos e Impérios Africanos</h1>
-            <p>Antiguidade e Idade Média: Riqueza, Cultura e Poder</p>
-        </div>
-    </header>
+<section>
+  <h1>Reinos Africanos</h1>
+  <h3>Séculos XIII ao XV</h3>
+  <p>Anderson Pereira<br>Licenciatura em História – Estácio</p>
+  <img src="https://images.unsplash.com/photo-1523805081446-bc95bb28b58a?q=80&w=600" alt="Mapa da África">
+  <aside class="notes">
+    Introduzir a ideia de que a África medieval era politicamente organizada,
+    integrada ao comércio internacional e produtora de conhecimento.
+  </aside>
+</section>
 
-    <div class="container">
-        
-        <section class="intro-section">
-            <h2>O Berço da Civilização</h2>
-            <p>A África foi o lar de impérios vastos e sofisticados que controlavam rotas comerciais transaarianas, possuíam exércitos organizados e centros de saber inigualáveis.</p>
-            <img src="Africae_tabula_nova.jpg" alt="Mapa Antigo da África - Tabula Nova">
-            <p><em>Representação cartográfica histórica do continente africano.</em></p>
-        </section>
-
-        <div class="kingdom-grid">
-
-            <article class="kingdom-card">
-                <img src="Abraham_Cresques_-_Detail_from_the_Catalan_Atlas_Sheet_6_showing_Mansa_Musa_enthroned_1375_-_(MeisterDrucke-831725).jpg" alt="Mansa Musa - Império do Mali">
-                <div class="kingdom-content">
-                    <span class="info-tag">1235 - 1670 d.C.</span>
-                    <h2>Império do Mali</h2>
-                    <p>Famoso pelo lendário rei <strong>Mansa Musa</strong>, considerado a pessoa mais rica da história. O Mali prosperou através do controle das rotas de ouro e sal. A cidade de Timbuktu tornou-se um centro global de cultura e aprendizado islâmico, com vastas bibliotecas e universidades.</p>
-                </div>
-            </article>
-
-            <article class="kingdom-card">
-                <img src="slide4-l.jpg" alt="Guerreiros do Império de Gana">
-                <div class="kingdom-content">
-                    <span class="info-tag">400 - 1220 d.C.</span>
-                    <h2>Império de Gana</h2>
-                    <p>Conhecido como a "Terra do Ouro". Foi o primeiro grande império comercial da África Ocidental. Seus reis acumulavam imensa riqueza taxando as mercadorias que atravessavam seu território. Não se converteram oficialmente ao Islã, mas permitiam a presença de mercadores muçulmanos.</p>
-                </div>
-            </article>
-
-            <article class="kingdom-card">
-                <img src="africa_3.jpg" alt="Território Africano">
-                <div class="kingdom-content">
-                    <span class="info-tag">1450 - 1670 d.C.</span>
-                    <h2>Império Songhai</h2>
-                    <p>Sucessor do Mali, tornou-se o maior império da história da África Ocidental sob a liderança de Sonni Ali e Askia, o Grande. Fortaleceu a administração centralizada e expandiu o comércio e o ensino acadêmico em cidades como Gao e Djenné.</p>
-                </div>
-            </article>
-
-            <article class="kingdom-card">
-                <img src="G07P67T05_reino_01206-1-1.jpg" alt="Reino do Congo">
-                <div class="kingdom-content">
-                    <span class="info-tag">1255 - 1670 d.C.</span>
-                    <h2>Reino do Congo</h2>
-                    <p>Localizado na África Central, possuía uma estrutura política complexa e uma economia baseada na agricultura, metalurgia e comércio de marfim e tecidos. Ficou marcado pelo contato com os portugueses e a conversão de seus reis, os Manicongos, ao cristianismo.</p>
-                </div>
-            </article>
-
-             <article class="kingdom-card">
-                <img src="86cd5-ab114_01-3.png" alt="Mapa da região de Axum">
-                <div class="kingdom-content">
-                    <span class="info-tag">100 - 940 d.C.</span>
-                    <h2>Reino de Axum</h2>
-                    <p>Localizado na atual Etiópia e Eritreia, foi uma poderosa potência naval e comercial que conectava o Império Romano à Índia. Foi um dos primeiros impérios a adotar o Cristianismo como religião oficial e é famoso por seus obeliscos gigantes.</p>
-                </div>
-            </article>
-
-        </div>
-
-        <section class="featured-section">
-            <div class="featured-image">
-                <img src="p0pqvgc21wz6c9qi7fob.jpg" alt="Grande Muralha do Zimbábue">
-            </div>
-            <div class="featured-text">
-                <span class="info-tag">Século XI - XV</span>
-                <h2>O Grande Zimbábue</h2>
-                <p>No sul da África, o Grande Zimbábue foi o centro de um vasto império comercial ligado à costa do Índico. É famoso por suas impressionantes muralhas de pedra construídas sem o uso de argamassa (arquitetura de pedra seca).</p>
-                <p>A cidade abrigava uma grande população e servia como capital real, evidenciando uma engenharia e organização social avançadas muito antes da chegada dos europeus.</p>
-            </div>
-        </section>
-
-        <section style="margin-top: 30px; background: white; padding: 20px; border-radius: 8px;">
-            <h3>Outros Reinos Importantes: Cartago</h3>
-            <p><strong>Cartago (814 a.C. - 146 a.C.):</strong> Localizada no norte da África (atual Tunísia), foi uma superpotência marítima que dominou o Mediterrâneo e rivalizou com Roma nas Guerras Púnicas. Famosa pelo general Aníbal.</p>
-        </section>
-
+<section>
+  <h2>O Sahel: Ouro e Saber</h2>
+  <div style="display:flex; gap:20px; align-items:center;">
+    <div style="flex:1;">
+      <ul>
+        <li><strong>Gana:</strong> Controle das rotas do ouro.</li>
+        <li><strong>Mali:</strong> Comércio transaariano e Mansa Musa.</li>
+        <li><strong>Songhai:</strong> Educação e centros islâmicos.</li>
+      </ul>
     </div>
+    <div style="flex:1;">
+      <img src="https://images.unsplash.com/photo-1590273466070-40c466b4432d?q=80&w=400" alt="Timbuktu">
+    </div>
+  </div>
+  <div class="curiosidade">
+    💡 Mansa Musa causou inflação no Egito ao distribuir ouro em excesso.
+  </div>
+  <aside class="notes">
+    Destacar Timbuktu como centro intelectual, com bibliotecas e universidades.
+  </aside>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Estudos de História da África. Material didático.</p>
-    </footer>
+<section>
+  <h2>Reino do Congo</h2>
+  <div style="display:flex; gap:20px; align-items:center;">
+    <div style="flex:1;">
+      <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=400" alt="Arte africana">
+    </div>
+    <div style="flex:1;">
+      <ul>
+        <li><strong>Manicongo:</strong> Rei com poder central.</li>
+        <li><strong>Nzimbu:</strong> Sistema monetário próprio.</li>
+        <li><strong>Diplomacia:</strong> Relações com Europa cristã.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="curiosidade">
+    💡 O Congo mantinha embaixadas e correspondência diplomática.
+  </div>
+</section>
+
+<section>
+  <h2>Grande Zimbábue</h2>
+  <div style="display:flex; gap:20px; align-items:center;">
+    <div style="flex:1;">
+      <ul>
+        <li><strong>Arquitetura:</strong> Pedra sem argamassa.</li>
+        <li><strong>Economia:</strong> Ouro e comércio marítimo.</li>
+        <li><strong>Símbolo:</strong> Poder político regional.</li>
+      </ul>
+    </div>
+    <div style="flex:1;">
+      <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=400" alt="Grande Zimbábue">
+    </div>
+  </div>
+  <div class="curiosidade">
+    💡 Achados arqueológicos incluem porcelanas chinesas.
+  </div>
+</section>
+
+<section>
+  <h2>África Medieval</h2>
+  <p>Organização política, saber e protagonismo histórico.</p>
+  <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?q=80&w=600" alt="África">
+  <p><strong>Obrigado!</strong></p>
+  <aside class="notes">
+    Finalizar reforçando a desconstrução da ideia de “África sem história”.
+  </aside>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    slideNumber: true,
+    plugins: [ RevealNotes ]
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
 
 </body>
 </html>
