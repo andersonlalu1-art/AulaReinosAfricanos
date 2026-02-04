@@ -37,9 +37,13 @@ ul {
 }
 
 .illustration {
-  max-width: 340px;
+  max-width: 100%;
+  height: auto;
+  max-height: 350px;
   margin: 30px auto;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .footer {
@@ -57,6 +61,7 @@ ul {
   position: fixed;
   top: 12px;
   right: 12px;
+  z-index: 100;
 }
 
 button {
@@ -78,28 +83,15 @@ button {
   <button onclick="nextSlide()">▶</button>
 </div>
 
-<!-- SLIDE 1 – INTRODUÇÃO -->
 <section class="slide active">
   <h1>Reinos Africanos<br>(Séculos XIII–XV)</h1>
   <p>
     A África medieval foi marcada por reinos organizados,
     comércio intenso e produção de conhecimento.
   </p>
-
-  <!-- MAPA DA ÁFRICA COM SAHEL -->
-  <svg class="illustration" viewBox="0 0 300 300">
-    <path d="M150 20
-             C210 40 260 120 230 200
-             C200 260 120 280 90 240
-             C40 200 30 120 70 70
-             C100 30 120 25 150 20Z"
-          fill="#cfae3b"/>
-    <rect x="90" y="90" width="120" height="30" fill="#2ec4b6"/>
-    <text x="95" y="110" font-size="12" fill="#000">Região do Sahel</text>
-  </svg>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/African_kingdoms_and_empires_map.png" class="illustration" alt="Mapa dos Impérios Africanos">
 </section>
 
-<!-- SLIDE 2 – SAHEL / MANSA MUSA -->
 <section class="slide">
   <h2>O Sahel: Ouro e Poder</h2>
   <ul>
@@ -107,38 +99,19 @@ button {
     <li><b>Mali</b>: Mansa Musa</li>
     <li><b>Songhai</b>: educação e comércio</li>
   </ul>
-
-  <!-- MANSA MUSA -->
-  <svg class="illustration" viewBox="0 0 300 300">
-    <circle cx="150" cy="80" r="35" fill="#5a3e2b"/>
-    <rect x="110" y="120" width="80" height="100" fill="#2ec4b6"/>
-    <polygon points="115,60 185,60 170,40 130,40" fill="#d4af37"/>
-    <circle cx="150" cy="180" r="18" fill="#d4af37"/>
-    <text x="95" y="250" fill="#d4af37" font-size="14">Mansa Musa (Império do Mali)</text>
-  </svg>
-
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Mansa_Musa.jpg" class="illustration" alt="Mansa Musa no Atlas Catalão">
   <p>💡 Considerado o homem mais rico da história.</p>
 </section>
 
-<!-- SLIDE 3 – TIMBUKTU -->
 <section class="slide">
   <h2>Songhai e Timbuktu</h2>
   <p>
     Timbuktu foi um dos maiores centros intelectuais
     da África medieval, com mesquitas e universidades.
   </p>
-
-  <!-- MESQUITA DE TIMBUKTU -->
-  <svg class="illustration" viewBox="0 0 300 200">
-    <rect x="40" y="90" width="220" height="60" fill="#b08d57"/>
-    <rect x="80" y="50" width="40" height="40" fill="#b08d57"/>
-    <rect x="140" y="40" width="40" height="50" fill="#b08d57"/>
-    <rect x="200" y="60" width="40" height="30" fill="#b08d57"/>
-    <line x1="60" y1="150" x2="240" y2="150" stroke="#000"/>
-  </svg>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Djinguereber_Mosque.jpg" class="illustration" alt="Mesquita Djinguereber em Timbuktu">
 </section>
 
-<!-- SLIDE 4 – REINO DO CONGO -->
 <section class="slide">
   <h2>Reino do Congo</h2>
   <p>
@@ -146,33 +119,18 @@ button {
     O rei, chamado Manicongo,
     mantinha relações diplomáticas com a Europa.
   </p>
-
-  <!-- COROA AFRICANA -->
-  <svg class="illustration" viewBox="0 0 300 200">
-    <polygon points="40,130 80,70 120,130 160,70 200,130 240,70 260,130"
-             fill="#d4af37"/>
-    <rect x="40" y="130" width="220" height="30" fill="#b08d2f"/>
-  </svg>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Manikongo.jpg" class="illustration" alt="Representação do Manicongo">
 </section>
 
-<!-- SLIDE 5 – GRANDE ZIMBÁBUE -->
 <section class="slide">
   <h2>Grande Zimbábue</h2>
   <p>
     Destacou-se por suas muralhas de pedra
     e pelo comércio de longa distância.
   </p>
-
-  <!-- MURALHAS -->
-  <svg class="illustration" viewBox="0 0 300 200">
-    <rect x="30" y="90" width="240" height="70" fill="#777"/>
-    <rect x="50" y="70" width="30" height="20" fill="#999"/>
-    <rect x="120" y="70" width="30" height="20" fill="#999"/>
-    <rect x="190" y="70" width="30" height="20" fill="#999"/>
-  </svg>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Great_Zimbabwe_Enclosure.jpg" class="illustration" alt="Ruínas do Grande Zimbábue">
 </section>
 
-<!-- SLIDE 6 – CONCLUSÃO -->
 <section class="slide">
   <h2>Conclusão</h2>
   <p>
@@ -192,6 +150,7 @@ const slides = document.querySelectorAll(".slide");
 function showSlide(i) {
   slides.forEach(s => s.classList.remove("active"));
   slides[i].classList.add("active");
+  window.scrollTo(0,0);
 }
 
 function nextSlide() {
@@ -203,6 +162,12 @@ function prevSlide() {
   current = (current - 1 + slides.length) % slides.length;
   showSlide(current);
 }
+
+// Atalhos de teclado
+document.addEventListener('keydown', (e) => {
+  if (e.key === "ArrowRight") nextSlide();
+  if (e.key === "ArrowLeft") prevSlide();
+});
 </script>
 
 </body>
