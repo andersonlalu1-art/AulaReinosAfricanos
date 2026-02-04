@@ -1,200 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reinos Africanos – Séculos XIII–XV</title>
+  <meta charset="utf-8">
+  <title>Reinos Africanos – História</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f172a;
-  color: #f8fafc;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.slide {
-  min-height: 100vh;
-  padding: 60px 20px 90px;
-  display: none;
-}
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
 
-.slide.active {
-  display: block;
-}
+  <style>
+    body {
+      background: linear-gradient(135deg, #0b1a2a, #020617);
+    }
 
-h1, h2 {
-  color: #eab308;
-}
+    h1, h2 {
+      color: #facc15;
+    }
 
-p, li {
-  font-size: 1.05em;
-  line-height: 1.6;
-}
+    p, li {
+      font-size: 1.1em;
+    }
 
-ul {
-  margin-top: 10px;
-}
+    .reveal section img {
+      max-width: 60%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      margin-top: 15px;
+    }
 
-img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.85);
-  color: #eab308;
-  text-align: center;
-  padding: 8px;
-  font-size: 0.85em;
-}
-
-.nav {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-}
-
-button {
-  background: #eab308;
-  border: none;
-  padding: 10px 14px;
-  margin-left: 6px;
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
-}
-</style>
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9em;
+      color: #facc15;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="nav">
-  <button onclick="prevSlide()">◀</button>
-  <button onclick="nextSlide()">▶</button>
+<div class="reveal">
+<div class="slides">
+
+  <!-- SLIDE 1 -->
+  <section>
+    <h1>Reinos Africanos<br>séculos XIII a XV</h1>
+    <p>África medieval: comércio, poder e conhecimento</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Africa_trade_routes_14th_century.png" alt="Mapa das rotas comerciais africanas">
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section>
+    <h2>Império do Mali</h2>
+    <p>Grande centro de comércio e saber. Destaque para o ouro e a cidade de Timbuktu.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Mali_Empire_map.svg" alt="Mapa do Império do Mali">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mansa_Musa.jpg" alt="Mansa Musa">
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section>
+    <h2>Império Songhai</h2>
+    <p>Fortalecimento político e intelectual. Universidades e bibliotecas.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Songhai_Empire_map.svg" alt="Mapa do Império Songhai">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Askia_Muhammad.jpg" alt="Askia Muhammad">
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section>
+    <h2>Reino do Congo</h2>
+    <p>Governo centralizado e relações diplomáticas com Portugal e o Vaticano.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Kongo_kingdom_map.png" alt="Mapa do Reino do Congo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Afonso_I_of_Kongo.jpg" alt="Rei Afonso I do Congo">
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section>
+    <h2>Grande Zimbábue</h2>
+    <p>Arquitetura monumental em pedra e comércio internacional.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Great_Zimbabwe_map.svg" alt="Mapa do Grande Zimbábue">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Great_Zimbabwe_ruins.jpg" alt="Ruínas do Grande Zimbábue">
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section>
+    <h2>Conclusão</h2>
+    <p>A África medieval teve protagonismo histórico, político e cultural.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/African_civilizations.png" alt="Civilizações africanas">
+  </section>
+
+</div>
 </div>
 
-<!-- SLIDE 1 -->
-<section class="slide active">
-  <h1>Reinos Africanos<br>(Séculos XIII–XV)</h1>
-  <p>
-    A África medieval foi marcada por reinos organizados,
-    comércio intenso e centros de produção de conhecimento.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Africa_in_1350.png"
-       alt="Mapa da África em 1350">
-</section>
-
-<!-- SLIDE 2 – SAHEL -->
-<section class="slide">
-  <h2>O Sahel: Ouro e Rotas Comerciais</h2>
-  <ul>
-    <li><b>Gana</b>: ouro e controle das rotas</li>
-    <li><b>Mali</b>: expansão territorial</li>
-    <li><b>Songhai</b>: comércio e administração</li>
-  </ul>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Trans-Saharan_trade_routes.svg"
-       alt="Rotas comerciais transaarianas">
-</section>
-
-<!-- SLIDE 3 – IMPÉRIO DO MALI -->
-<section class="slide">
-  <h2>Império do Mali</h2>
-  <p>
-    O Mali destacou-se pela riqueza do ouro e pelo governo de Mansa Musa,
-    um dos soberanos mais ricos da história.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Mali_Empire_map.svg"
-       alt="Mapa do Império do Mali">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Catalan_Atlas_Mansa_Musa.jpg"
-       alt="Mansa Musa no Atlas Catalão">
-</section>
-
-<!-- SLIDE 4 – SONGHAI -->
-<section class="slide">
-  <h2>Império Songhai</h2>
-  <p>
-    Tornou-se um dos maiores impérios da África Ocidental,
-    com destaque para Timbuktu como centro intelectual.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Songhai_Empire_map.svg"
-       alt="Mapa do Império Songhai">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Timbuktu_Manuscripts_2009.jpg"
-       alt="Manuscritos de Timbuktu">
-</section>
-
-<!-- SLIDE 5 – REINO DO CONGO -->
-<section class="slide">
-  <h2>Reino do Congo</h2>
-  <p>
-    Possuía governo centralizado e relações diplomáticas com Portugal
-    e o Vaticano a partir do século XV.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Kingdom_of_Kongo_1648.jpg"
-       alt="Mapa do Reino do Congo">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Afonso_I_of_Kongo.jpg"
-       alt="Rei Afonso I do Congo">
-</section>
-
-<!-- SLIDE 6 – GRANDE ZIMBÁBUE -->
-<section class="slide">
-  <h2>Grande Zimbábue</h2>
-  <p>
-    Conhecido por suas monumentais construções de pedra
-    e pelo comércio com a costa do Oceano Índico.
-  </p>
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Great_Zimbabwe_map.svg"
-       alt="Mapa do Grande Zimbábue">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Great_Zimbabwe_Ruins.jpg"
-       alt="Ruínas do Grande Zimbábue">
-</section>
-
-<!-- SLIDE 7 -->
-<section class="slide">
-  <h2>Conclusão</h2>
-  <p>
-    Os reinos africanos medievais demonstram o protagonismo
-    da África na economia, política e cultura mundial.
-  </p>
-</section>
-
-<div class="footer">
+<footer>
   Aula de História • Anderson Pereira
-</div>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
 <script>
-let current = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(i) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[i].classList.add("active");
-}
-
-function nextSlide() {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-}
-
-function prevSlide() {
-  current = (current - 1 + slides.length) % slides.length;
-  showSlide(current);
-}
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide'
+  });
 </script>
 
 </body>
