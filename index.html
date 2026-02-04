@@ -1,313 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reinos Africanos – Anderson Pereira</title>
-    <style>
-        :root {
-            --gold: #d4af37;
-            --dark-blue: #0f172a;
-            --text-light: #f8fafc;
-            --accent: #b45309;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reinos Africanos – Séculos XIII–XV</title>
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark-blue);
-            color: var(--text-light);
-            overflow: hidden;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+}
 
-        /* Container de Slides */
-        .slider {
-            display: flex;
-            width: 600vw; /* 6 slides */
-            height: 100vh;
-            transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
+.slide {
+  min-height: 100vh;
+  padding: 60px 20px 90px;
+  display: none;
+}
 
-        section {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            box-sizing: border-box;
-            position: relative;
-            background: linear-gradient(to bottom, #1e293b, #000);
-        }
+.slide.active {
+  display: block;
+}
 
-        .content {
-            max-width: 900px;
-            text-align: center;
-            z-index: 2;
-        }
+h1, h2 {
+  color: #eab308;
+}
 
-        h1 {
-            font-size: 3.5rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
+p, li {
+  font-size: 1.05em;
+  line-height: 1.6;
+}
 
-        h2 {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+ul {
+  margin-top: 10px;
+}
 
-        p, li {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
 
-        ul {
-            text-align: left;
-            display: inline-block;
-            list-style-type: square;
-        }
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  color: #eab308;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.85em;
+}
 
-        /* Imagens Estilizadas */
-        .img-container {
-            width: 100%;
-            max-width: 600px;
-            height: 350px;
-            margin: 20px auto;
-            border: 4px solid var(--gold);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            background: #1a1a1a; /* Cor de fundo caso a imagem falhe */
-            position: relative;
-        }
+.nav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
 
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        /* Box de Curiosidade */
-        .curiosity-box {
-            background: rgba(180, 83, 9, 0.2);
-            border-left: 5px solid var(--gold);
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 0 10px 10px 0;
-            text-align: left;
-        }
-
-        .curiosity-box b {
-            color: var(--gold);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* Navegação */
-        .nav-ui {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            display: flex;
-            gap: 20px;
-            z-index: 100;
-        }
-
-        button {
-            background: var(--gold);
-            color: #000;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            transition: 0.3s;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            background: #fff;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 15px;
-            left: 30px;
-            font-size: 0.9rem;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-
-        .progress-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 6px;
-            background: var(--gold);
-            transition: width 0.3s;
-            z-index: 1000;
-        }
-
-        /* Responsividade Básica */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            .img-container { height: 200px; }
-            p, li { font-size: 1rem; }
-        }
-    </style>
+button {
+  background: #eab308;
+  border: none;
+  padding: 10px 14px;
+  margin-left: 6px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-<div class="progress-indicator" id="progress"></div>
-
-<div class="slider" id="slider">
-    
-    <!-- SLIDE 1: ABERTURA -->
-    <section>
-        <div class="content">
-            <h1>Reinos Africanos</h1>
-            <p>Organização, Poder e Cultura entre os Séculos XIII e XV</p>
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1523805081446-bc95bb28b58a?auto=format&fit=crop&q=80&w=1000" alt="Mapa da África">
-            </div>
-            <p style="font-style: italic; color: var(--gold);">Apresentado por Anderson Pereira</p>
-        </div>
-    </section>
-
-    <!-- SLIDE 2: IMPÉRIO DO MALI -->
-    <section>
-        <div class="content">
-            <h2>Império do Mali</h2>
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1614359833911-597229329ecb?auto=format&fit=crop&q=80&w=1000" alt="Ouro Africano">
-            </div>
-            <ul>
-                <li><strong>Mansa Musa:</strong> O auge da riqueza mundial.</li>
-                <li><strong>Economia:</strong> Controle total das rotas de ouro e sal.</li>
-                <li><strong>Expansão:</strong> Unificação de vastos territórios no Sahel.</li>
-            </ul>
-            <div class="curiosity-box">
-                <b>💡 Informação Importante:</b>
-                O Mali era tão rico que sua produção de ouro sustentava as moedas da Europa e do Mediterrâneo na época.
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 3: IMPÉRIO SONGHAI -->
-    <section>
-        <div class="content">
-            <h2>Império Songhai</h2>
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1544923246-77307dd654ca?auto=format&fit=crop&q=80&w=1000" alt="Cidade de Timbuktu">
-            </div>
-            <p>Sucessor do Mali, levou a administração e o ensino a novos patamares.</p>
-            <ul>
-                <li><strong>Timbuktu:</strong> Centro acadêmico mundial.</li>
-                <li><strong>Ensino:</strong> Milhares de manuscritos sobre ciência e lei.</li>
-            </ul>
-            <div class="curiosity-box">
-                <b>💡 Curiosidade:</b>
-                Em Timbuktu, os livros eram importados da Berbéria e vendidos por preços mais altos que qualquer outra mercadoria.
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 4: REINO DO CONGO -->
-    <section>
-        <div class="content">
-            <h2>Reino do Congo</h2>
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=1000" alt="Arte Centro-Africana">
-            </div>
-            <ul>
-                <li><strong>Manicongo:</strong> Monarquia centralizada e organizada.</li>
-                <li><strong>Sociedade:</strong> Divisão em províncias e sistema de impostos.</li>
-                <li><strong>Moeda:</strong> Uso do Nzimbu (conchas) para trocas.</li>
-            </ul>
-            <div class="curiosity-box">
-                <b>💡 Informação Importante:</b>
-                O Reino do Congo possuía embaixadores oficiais que viajavam para tratar de assuntos de Estado em Portugal e no Vaticano.
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 5: GRANDE ZIMBÁBUE -->
-    <section>
-        <div class="content">
-            <h2>Grande Zimbábue</h2>
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&q=80&w=1000" alt="Ruínas de Pedra">
-            </div>
-            <ul>
-                <li><strong>Engenharia:</strong> Muralhas imensas sem o uso de argamassa.</li>
-                <li><strong>Conexão:</strong> Comércio de ouro com Índia, Arábia e China.</li>
-            </ul>
-            <div class="curiosity-box">
-                <b>💡 Curiosidade:</b>
-                Fragmentos de porcelana chinesa foram encontrados nas ruínas, provando o alcance global deste reino no século XIV.
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 6: CONCLUSÃO -->
-    <section>
-        <div class="content">
-            <h1>Legado Africano</h1>
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1523213139764-dc3bc4aa350b?auto=format&fit=crop&q=80&w=1000" alt="Pôr do Sol África">
-            </div>
-            <p>A África medieval foi um centro de soberania, inovação e protagonismo histórico.</p>
-            <p style="color: var(--gold); font-weight: bold;">Obrigado pela atenção!</p>
-        </div>
-    </section>
-
+<div class="nav">
+  <button onclick="prevSlide()">◀</button>
+  <button onclick="nextSlide()">▶</button>
 </div>
 
-<div class="nav-ui">
-    <button onclick="changeSlide(-1)">◀</button>
-    <button onclick="changeSlide(1)">▶</button>
-</div>
+<!-- SLIDE 1 -->
+<section class="slide active">
+  <h1>Reinos Africanos<br>(Séculos XIII–XV)</h1>
+  <p>
+    A África medieval foi marcada por reinos organizados,
+    comércio intenso e centros de produção de conhecimento.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Africa_in_1350.png"
+       alt="Mapa da África em 1350">
+</section>
+
+<!-- SLIDE 2 – SAHEL -->
+<section class="slide">
+  <h2>O Sahel: Ouro e Rotas Comerciais</h2>
+  <ul>
+    <li><b>Gana</b>: ouro e controle das rotas</li>
+    <li><b>Mali</b>: expansão territorial</li>
+    <li><b>Songhai</b>: comércio e administração</li>
+  </ul>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Trans-Saharan_trade_routes.svg"
+       alt="Rotas comerciais transaarianas">
+</section>
+
+<!-- SLIDE 3 – IMPÉRIO DO MALI -->
+<section class="slide">
+  <h2>Império do Mali</h2>
+  <p>
+    O Mali destacou-se pela riqueza do ouro e pelo governo de Mansa Musa,
+    um dos soberanos mais ricos da história.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Mali_Empire_map.svg"
+       alt="Mapa do Império do Mali">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Catalan_Atlas_Mansa_Musa.jpg"
+       alt="Mansa Musa no Atlas Catalão">
+</section>
+
+<!-- SLIDE 4 – SONGHAI -->
+<section class="slide">
+  <h2>Império Songhai</h2>
+  <p>
+    Tornou-se um dos maiores impérios da África Ocidental,
+    com destaque para Timbuktu como centro intelectual.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Songhai_Empire_map.svg"
+       alt="Mapa do Império Songhai">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Timbuktu_Manuscripts_2009.jpg"
+       alt="Manuscritos de Timbuktu">
+</section>
+
+<!-- SLIDE 5 – REINO DO CONGO -->
+<section class="slide">
+  <h2>Reino do Congo</h2>
+  <p>
+    Possuía governo centralizado e relações diplomáticas com Portugal
+    e o Vaticano a partir do século XV.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Kingdom_of_Kongo_1648.jpg"
+       alt="Mapa do Reino do Congo">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Afonso_I_of_Kongo.jpg"
+       alt="Rei Afonso I do Congo">
+</section>
+
+<!-- SLIDE 6 – GRANDE ZIMBÁBUE -->
+<section class="slide">
+  <h2>Grande Zimbábue</h2>
+  <p>
+    Conhecido por suas monumentais construções de pedra
+    e pelo comércio com a costa do Oceano Índico.
+  </p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Great_Zimbabwe_map.svg"
+       alt="Mapa do Grande Zimbábue">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Great_Zimbabwe_Ruins.jpg"
+       alt="Ruínas do Grande Zimbábue">
+</section>
+
+<!-- SLIDE 7 -->
+<section class="slide">
+  <h2>Conclusão</h2>
+  <p>
+    Os reinos africanos medievais demonstram o protagonismo
+    da África na economia, política e cultura mundial.
+  </p>
+</section>
 
 <div class="footer">
-    Aula de História • Anderson Pereira
+  Aula de História • Anderson Pereira
 </div>
 
 <script>
-    let currentSlide = 0;
-    const totalSlides = 6;
-    const slider = document.getElementById('slider');
-    const progress = document.getElementById('progress');
+let current = 0;
+const slides = document.querySelectorAll(".slide");
 
-    function changeSlide(direction) {
-        currentSlide += direction;
-        
-        if (currentSlide >= totalSlides) currentSlide = 0;
-        if (currentSlide < 0) currentSlide = totalSlides - 1;
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[i].classList.add("active");
+}
 
-        slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
-        progress.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
-    }
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
 
-    // Navegação por teclado
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "ArrowRight") changeSlide(1);
-        if (e.key === "ArrowLeft") changeSlide(-1);
-    });
+function prevSlide() {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
 </script>
 
 </body>
